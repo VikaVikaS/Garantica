@@ -446,24 +446,28 @@
 				<div class="filter__col filter__category">
 					<ul class="category-list">
 						<li class="category-list__item">
-							<div class="filter-trigger js-filter-inner-first-trig" data-id="movable">
+							<input type="radio" id="movable" name="type">
+							<label for="movable" class="filter-trigger js-filter-inner-first-trig" data-id="movable">
 								<span>РУХОМЕ</span>
-							</div>
+							</label>
 						</li>
 						<li class="category-list__item">
-							<div for="immovable" class="filter-trigger js-filter-inner-first-trig" data-id="immovable">
+							<input type="radio" id="immovable" name="type">
+							<label for="immovable" class="filter-trigger js-filter-inner-first-trig" data-id="immovable">
 								<span>НЕРУХОМЕ</span>
-							</div>
+							</label>
 						</li>
 						<li class="category-list__item">
-							<div class="filter-trigger js-filter-inner-first-trig" data-id="other">
+							<input type="radio" id="other" name="type">
+							<label for="other" class="filter-trigger js-filter-inner-first-trig" data-id="other">
 								<span>ІНШЕ</span>
-							</div>
+							</label>
 						</li>
 						<li class="category-list__item">
-							<div class="filter-trigger js-filter-inner-first-trig" data-id="all">
+							<input type="radio" id="all" name="type">
+							<label for="all" class="filter-trigger js-filter-inner-first-trig" data-id="all">
 								<span>ВСЕ</span>
-							</div>
+							</label>
 						</li>
 					</ul>
 				</div>
@@ -487,138 +491,201 @@
 					<ul class="subcategory-list js-filter-inner-first" data-id="immovable">
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="flats">
+							<input type="radio" name="subtype" id="flats">
+							<label for="flats" class="filter-trigger js-filter-inner-second-trig" data-id="flats">
 								<span>Квартира</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="houses">
+							<input type="radio" name="subtype" id="houses">
+							<label for="houses" class="filter-trigger js-filter-inner-second-trig" data-id="houses">
 								<span>Житловий будинок</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="ground">
+							<input type="radio" name="subtype" id="ground">
+							<label for="ground" class="filter-trigger js-filter-inner-second-trig" data-id="ground">
 								<span>Земля</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="trade">
+							<input type="radio" name="subtype" id="trade">
+							<label for="trade" class="filter-trigger js-filter-inner-second-trig" data-id="trade">
 								<span>Торгові</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="manufacture">
+							<input type="radio" name="subtype" id="manufacture">
+							<label for="manufacture" class="filter-trigger js-filter-inner-second-trig" data-id="manufacture">
 								<span>Виробничі</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="warehouse">
+							<input type="radio" name="subtype" id="warehouse">
+							<label for="warehouse" class="filter-trigger js-filter-inner-second-trig" data-id="warehouse">
 								<span>Склади</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="commerce">
+							<input type="radio" name="subtype" id="commerce">
+							<label for="commerce" class="filter-trigger js-filter-inner-second-trig" data-id="commerce">
 								<span>Комерційні</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="property">
+							<input type="radio" name="subtype" id="property">
+							<label for="property" class="filter-trigger js-filter-inner-second-trig" data-id="property">
 								<span>Майнові комплекси</span>
-							</div>
+							</label>
 						</li>
 						
 					</ul>
 					<ul class="subcategory-list js-filter-inner-first" data-id="movable">
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="auto">
-								<span>Авто</span>
-							</div>
+							<input type="radio" name="subtype" id="cars">
+							<label for="cars" class="filter-trigger js-filter-inner-second-trig" data-id="cars">
+								<span>Легковые автомобили</span>
+							</label>
+						</li>
+						
+						<li class="subcategory-list__item">
+							<input type="radio" name="subtype" id="trucks">
+							<label for="trucks" class="filter-trigger js-filter-inner-second-trig" data-id="trucks">
+								<span>Грузовые автомобили</span>
+							</label>
+						</li>
+						
+						<li class="subcategory-list__item">
+							<input type="radio" name="subtype" id="special">
+							<label for="special" class="filter-trigger js-filter-inner-second-trig" data-id="special">
+								<span>Спецтехника</span>
+							</label>
+						</li>
+						
+						<li class="subcategory-list__item">
+							<input type="radio" name="subtype" id="agricultural">
+							<label for="agricultural" class="filter-trigger js-filter-inner-second-trig" data-id="agricultural">
+								<span>Сельхозтехника</span>
+							</label>
+						</li>
+						
+						<li class="subcategory-list__item">
+							<input type="radio" name="subtype" id="moto">
+							<label for="moto" class="filter-trigger js-filter-inner-second-trig" data-id="moto">
+								<span>Мототехника</span>
+							</label>
+						</li>
+						
+						<li class="subcategory-list__item">
+							<input type="radio" name="subtype" id="buses">
+							<label for="buses" class="filter-trigger js-filter-inner-second-trig" data-id="buses">
+								<span>Автобусы</span>
+							</label>
+						</li>
+						
+						<li class="subcategory-list__item">
+							<input type="radio" name="subtype" id="equipment">
+							<label for="equipment" class="filter-trigger js-filter-inner-second-trig" data-id="equipment">
+								<span>Оборудование</span>
+							</label>
 						</li>
 						
 					</ul>
 					<ul class="subcategory-list js-filter-inner-first" data-id="other">
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="other">
+							<input type="radio" name="subtype" id="other">
+							<label for="other" class="filter-trigger js-filter-inner-second-trig" data-id="other">
 								<span>Права вимоги</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="other">
+							<input type="radio" name="subtype" id="other">
+							<label for="other" class="filter-trigger js-filter-inner-second-trig" data-id="other">
 								<span>Діючий бізнес</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="other">
+							<input type="radio" name="subtype" id="other">
+							<label for="other" class="filter-trigger js-filter-inner-second-trig" data-id="other">
 								<span>Акції товариств</span>
-							</div>
+							</label>
 						</li>
 						
 					</ul>
 					<ul class="subcategory-list  js-filter-inner-first" data-id="all">
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="flats">
+							<input type="radio" name="subtype" id="flats">
+							<label for="flats" class="filter-trigger js-filter-inner-second-trig" data-id="flats">
 								<span>Квартира</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="houses">
+							<input type="radio" name="subtype" id="houses">
+							<label for="houses" class="filter-trigger js-filter-inner-second-trig" data-id="houses">
 								<span>Житловий будинок</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="ground">
+							<input type="radio" name="subtype" id="ground">
+							<label for="ground" class="filter-trigger js-filter-inner-second-trig" data-id="ground">
 								<span>Земля</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="trade">
+							<input type="radio" name="subtype" id="trade">
+							<label for="trade" class="filter-trigger js-filter-inner-second-trig" data-id="trade">
 								<span>Торгові</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="manufacture">
+							<input type="radio" name="subtype" id="manufacture">
+							<label for="manufacture" class="filter-trigger js-filter-inner-second-trig" data-id="manufacture">
 								<span>Виробничі</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="warehouse">
+							<input type="radio" name="subtype" id="warehouse">
+							<label for="warehouse" class="filter-trigger js-filter-inner-second-trig" data-id="warehouse">
 								<span>Склади</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="commerce">
+							<input type="radio" name="subtype" id="commerce">
+							<label for="commerce" class="filter-trigger js-filter-inner-second-trig" data-id="commerce">
 								<span>Комерційні</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="property">
+							<input type="radio" name="subtype" id="property">
+							<label for="property" class="filter-trigger js-filter-inner-second-trig" data-id="property">
 								<span>Майнові комплекси</span>
-							</div>
+							</label>
 						</li>
 						
 						<li class="subcategory-list__item">
-							<div class="filter-trigger js-filter-inner-second-trig" data-id="auto">
+							<input type="radio" name="subtype" id="auto">
+							<label for="auto" class="filter-trigger js-filter-inner-second-trig" data-id="auto">
 								<span>Авто</span>
-							</div>
+							</label>
 						</li>
 						
 					</ul>
@@ -997,7 +1064,7 @@
 		</div>
 	</div>
 </div>
-				<div class="filter-inner js-filter-inner-second" data-id="auto">
+				<div class="filter-inner js-filter-inner-second" data-id="cars">
 	<div class="filter__col filter__values">
 		<div class="filter-select js-select">
 			<div class="filter-select__btn js-select-trig">
@@ -1143,16 +1210,16 @@
 </div>
 
 
-				<div class="filter-inner js-filter-inner-second" data-id="ground">
+				<div class="filter-inner js-filter-inner-second" data-id="trucks">
 	<div class="filter__col filter__values">
 		<div class="filter-select js-select">
 			<div class="filter-select__btn js-select-trig">
-				тип дільниці
+				Марка
 			</div>
 			<div class="filter-select__field filter-select__field--md js-select-field">
 				<select>
-					<option value="0">дільниця 1</option>
-					<option value="1">дільниця 2</option>
+					<option value="0">Марка 1</option>
+					<option value="1">Марка 2</option>
 				</select>
 			</div>
 		</div>
@@ -1176,7 +1243,7 @@
 	<div class="filter__col filter__values">
 		<div class="values-range">
 			<div class="values-range__text">
-				Площа від
+				Об'єм двигуна від
 			</div>
 			<div class="values-range__input">
 				<input type="text" class="input">
@@ -1189,7 +1256,837 @@
 			</div>
 		</div>
 	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Пробіг від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Тип кузова
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Тип 1</option>
+					<option value="1">Тип 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Вид палива
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Вид 1</option>
+					<option value="1">Вид 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Рік випуску від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Коробка передач
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Автомат</option>
+					<option value="1">Ручна</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Колір
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Чорний</option>
+					<option value="1">Білий</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Розмитнена
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Так</option>
+					<option value="1">Ні</option>
+				</select>
+			</div>
+		</div>
+	</div>
 </div>
+
+
+				<div class="filter-inner js-filter-inner-second" data-id="special">
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Марка
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Марка 1</option>
+					<option value="1">Марка 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Ціна від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Об'єм двигуна від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Пробіг від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Тип кузова
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Тип 1</option>
+					<option value="1">Тип 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Вид палива
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Вид 1</option>
+					<option value="1">Вид 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Рік випуску від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Коробка передач
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Автомат</option>
+					<option value="1">Ручна</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Колір
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Чорний</option>
+					<option value="1">Білий</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Розмитнена
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Так</option>
+					<option value="1">Ні</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+				<div class="filter-inner js-filter-inner-second" data-id="agricultural">
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Марка
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Марка 1</option>
+					<option value="1">Марка 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Ціна від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Об'єм двигуна від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Пробіг від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Тип кузова
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Тип 1</option>
+					<option value="1">Тип 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Вид палива
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Вид 1</option>
+					<option value="1">Вид 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Рік випуску від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Коробка передач
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Автомат</option>
+					<option value="1">Ручна</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Колір
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Чорний</option>
+					<option value="1">Білий</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Розмитнена
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Так</option>
+					<option value="1">Ні</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+				<div class="filter-inner js-filter-inner-second" data-id="moto">
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Марка
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Марка 1</option>
+					<option value="1">Марка 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Ціна від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Об'єм двигуна від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Пробіг від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Тип кузова
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Тип 1</option>
+					<option value="1">Тип 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Вид палива
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Вид 1</option>
+					<option value="1">Вид 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Рік випуску від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Коробка передач
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Автомат</option>
+					<option value="1">Ручна</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Колір
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Чорний</option>
+					<option value="1">Білий</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Розмитнена
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Так</option>
+					<option value="1">Ні</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+				<div class="filter-inner js-filter-inner-second" data-id="buses">
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Марка
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Марка 1</option>
+					<option value="1">Марка 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Ціна від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Об'єм двигуна від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Пробіг від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Тип кузова
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Тип 1</option>
+					<option value="1">Тип 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Вид палива
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Вид 1</option>
+					<option value="1">Вид 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Рік випуску від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Коробка передач
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Автомат</option>
+					<option value="1">Ручна</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Колір
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Чорний</option>
+					<option value="1">Білий</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Розмитнена
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Так</option>
+					<option value="1">Ні</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+				<div class="filter-inner js-filter-inner-second" data-id="equipment">
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Марка
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Марка 1</option>
+					<option value="1">Марка 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Ціна від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Об'єм двигуна від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Пробіг від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Тип кузова
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Тип 1</option>
+					<option value="1">Тип 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Вид палива
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Вид 1</option>
+					<option value="1">Вид 2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="values-range">
+			<div class="values-range__text">
+				Рік випуску від
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+			<div class="values-range__text">
+				до
+			</div>
+			<div class="values-range__input">
+				<input type="text" class="input">
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Коробка передач
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Автомат</option>
+					<option value="1">Ручна</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Колір
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Чорний</option>
+					<option value="1">Білий</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="filter__col filter__values">
+		<div class="filter-select js-select">
+			<div class="filter-select__btn js-select-trig">
+				Розмитнена
+			</div>
+			<div class="filter-select__field filter-select__field--md js-select-field">
+				<select>
+					<option value="0">Так</option>
+					<option value="1">Ні</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+				
 				<div class="filter__row-reset">
 					<span class="btn btn-transparent js-filter-reset">
 						<svg class="icon-cross">
@@ -1247,7 +2144,7 @@
 			<div>
 				Регіон: <span>Харківська область, м.Харків</span>
 			</div>
-			<div>Адреса: регіон <span>______</span>, вул.<span>______</span>, №<span>_____</span> </div>
+			<div>Адреса: вул.<span>______</span>, №<span>_____</span> </div>
 		</address>
 		<div class="product-card__info-item">
 			3-х кімнатна квартира
@@ -1281,7 +2178,7 @@
 			<div>
 				Регіон: <span>Харківська область, м.Харків</span>
 			</div>
-			<div>Адреса: регіон <span>______</span>, вул.<span>______</span>, №<span>_____</span> </div>
+			<div>Адреса: вул.<span>______</span>, №<span>_____</span> </div>
 		</address>
 		<div class="product-card__info-item">
 			3-х кімнатна квартира
@@ -1315,7 +2212,7 @@
 			<div>
 				Регіон: <span>Харківська область, м.Харків</span>
 			</div>
-			<div>Адреса: регіон <span>______</span>, вул.<span>______</span>, №<span>_____</span> </div>
+			<div>Адреса: вул.<span>______</span>, №<span>_____</span> </div>
 		</address>
 		<div class="product-card__info-item">
 			3-х кімнатна квартира
@@ -1385,7 +2282,7 @@
 			<div>
 				Регіон: <span>Харківська область, м.Харків</span>
 			</div>
-			<div>Адреса: регіон <span>______</span>, вул.<span>______</span>, №<span>_____</span> </div>
+			<div>Адреса: вул.<span>______</span>, №<span>_____</span> </div>
 		</address>
 		<div class="product-card__info-item">
 			3-х кімнатна квартира
@@ -1419,7 +2316,7 @@
 			<div>
 				Регіон: <span>Харківська область, м.Харків</span>
 			</div>
-			<div>Адреса: регіон <span>______</span>, вул.<span>______</span>, №<span>_____</span> </div>
+			<div>Адреса: вул.<span>______</span>, №<span>_____</span> </div>
 		</address>
 		<div class="product-card__info-item">
 			3-х кімнатна квартира
