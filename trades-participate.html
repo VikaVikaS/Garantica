@@ -341,46 +341,16 @@
 						</div>
 						<div class="trades-info__row">
 							<div class="trades-info__col">
-								<div class="trades-value">
-									<div class="trades-value__title">
-										Моя пропозиція:
-									</div>
-									<input type="text" class="input trades-value__field input--green" value="790 000">
-								</div>
-							</div>
-							<div class="trades-info__col">
-								<div class="trades-value">
-									<div class="trades-value__title">
-										Множувач кроку:
-									</div>
-									<div class="spinner js-spinner" data-min="1" data-max="10">
-	<div class="spinner__trig spinner__trig--plus js-spinner-plus">
-		<svg class="icon-arrow-sm">
-			<use xlink:href="#arrow"></use>
-		</svg>
-	</div>
-	<input type="text" class="input input--green spinner__field js-spinner-field" value="1">
-	<div class="spinner__trig spinner__trig--minus js-spinner-minus">
-		<svg class="icon-arrow-sm">
-			<use xlink:href="#arrow"></use>
-		</svg>
-	</div>
-</div>
-								</div>
-							</div>
-						</div>
-						<div class="trades-info__row">
-							<div class="trades-info__col">
 								<a href="#" class="btn btn-green trades-info__btn trades-info__btn--transform">
 									прийняти участь у торгах
 								</a>
 							</div>
 						</div>	
 						<div class="trades-record">
-	<div class="trades-record__wrap js-scroll-arrows">
-		<div class="trades-record__title">
-			ПРОТОКОЛ
-		</div>
+	<div class="trades-record__title">
+		ПРОТОКОЛ
+	</div>
+	<div class="js-scroll-arrows trades-record__table-wrap">
 		<table class="trades-record__table">
 			<thead>
 				<th class="trades-record__table-person">
@@ -393,7 +363,7 @@
 					Час
 				</th>
 				<th class="trades-record__table-sum">
-					Пропозиція	
+					Пропозиція
 				</th>
 			</thead>
 			
@@ -496,7 +466,7 @@
 		</div>
 	</div>
 </div>
-<div class="popup js-popup" id="documents">
+<div class="popup js-popup js-scroll" id="documents">
 	<div class="container">
 		<div class="popup__inner">
 			<svg class="icon-cross popup__close js-popup-close">
@@ -632,12 +602,13 @@
 </div>
 	<script src="js/plugins.js"></script>
 	
-	<script src="js/trades.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhMYxf2suY4IZGRL0_ofOrP6fC2mAlDQU&callback=initMap" type="text/javascript"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhMYxf2suY4IZGRL0_ofOrP6fC2mAlDQU" type="text/javascript"></script>
 	
-
+	
+	<script src="js/trades.js"></script>
 	
 	<script src="js/main.js"></script>
+	
 </body>
 </html>
 
