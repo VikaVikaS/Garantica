@@ -508,10 +508,22 @@
 								<div class="search__params-col-item">
 									<div class="values-range">
 										<div class="values-range__text">
-											Тривалість пошуку
+											Тривалість пошуку (днів)
 										</div>
 										<div class="values-range__input">
-											<input type="text" class="input">
+											<div class="input-counter js-spinner" data-min="1" data-max="10">
+												<input type="text" class="input input-counter__field js-spinner-field" value="1" readonly>
+												<div class="input-counter__top-trig js-spinner-plus">
+													<svg class="icon-arrow">
+														<use xlink:href="#arrow"></use>
+													</svg>
+												</div>
+												<div class="input-counter__bottom-trig js-spinner-minus">
+													<svg class="icon-arrow">
+														<use xlink:href="#arrow"></use>
+													</svg>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>

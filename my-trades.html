@@ -310,10 +310,10 @@
 				Поточна найвища пропозиція
 			</th>
 			<th class="my-price">
-				Моя пропозиція
+				Моя ціна
 			</th>
 			<th>
-				Статус
+				Статус моєї ціни
 			</th>
 			<th class="timer">
 				Залишилось до торгів
@@ -425,7 +425,7 @@
 				Пропозиція переможця
 			</th>
 			<th class="timer">
-				Залишилось до торгів
+				До укладання угоди
 			</th>
 		</tr>
 	</thead>
@@ -539,7 +539,7 @@
 				Статус торгів
 			</th>
 			<th class="sm-price">
-				Резервна ціна
+				Моя ціна
 			</th>
 			<th class="sm-price">
 				Пропозиція переможця
@@ -565,10 +565,10 @@
 				АТЗ Ауді 6
 			</td>
 			<td class="my-status">
-				Відбулись
+				прихована
 			</td>
 			<td class="sm-price">
-				прихована
+				Відбулись
 			</td>
 			<td class="sm-price">
 				82 000
@@ -595,10 +595,10 @@
 				АТЗ Ауді 6
 			</td>
 			<td class="my-status">
-				Відбулись
+				прихована
 			</td>
 			<td class="sm-price">
-				прихована
+				Відбулись
 			</td>
 			<td class="sm-price">
 				82 000
@@ -625,10 +625,10 @@
 				АТЗ Ауді 6
 			</td>
 			<td class="my-status">
-				Відбулись
+				прихована
 			</td>
 			<td class="sm-price">
-				прихована
+				Відбулись
 			</td>
 			<td class="sm-price">
 				82 000
@@ -667,7 +667,19 @@
 				Кількість доданих днів
 			</div>
 			<div class="add-time__amount-val">
-				<input type="text" class="input" value="7">
+				<div class="input-counter js-spinner" data-min="1" data-max="10">
+					<input type="text" class="input input-counter__field js-spinner-field" value="7" readonly>
+					<div class="input-counter__top-trig js-spinner-plus">
+						<svg class="icon-arrow">
+							<use xlink:href="#arrow"></use>
+						</svg>
+					</div>
+					<div class="input-counter__bottom-trig js-spinner-minus">
+						<svg class="icon-arrow">
+							<use xlink:href="#arrow"></use>
+						</svg>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="add-time__date">
@@ -679,7 +691,7 @@
 			</div>
 		</div>
 		<button type="submit" class="btn btn-green add-time__btn">
-			додати час
+		додати час
 		</button>
 	</form>
 </div>
