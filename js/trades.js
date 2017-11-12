@@ -102,7 +102,7 @@
 				    	month = totalTitle[0],
 				    	year = totalTitle[1];
 
-				    $('.fc-left h2').html('<span>'+month+'</span><span class="fc-custom-year">'+year+'</span>');
+				    $('.js-calendar').find($('.fc-left h2')).html('<span>'+month+'</span><span class="fc-custom-year">'+year+'</span>');
 			     }
 			});
 		}

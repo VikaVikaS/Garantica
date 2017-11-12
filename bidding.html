@@ -670,8 +670,9 @@
 			<label>
 				Оберіть дати, коли Вам буде зручно показати майно
 			</label>
-			<a href="#" class="btn btn-transparent conditions__btn">
-				КАЛЕНДАР ОГЛЯДУ МАЙНА
+			<a href="#selectDates" class="btn btn-transparent conditions__btn" data-popup>
+				<span class="conditions__btn-text-disabled">КАЛЕНДАР ОГЛЯДУ МАЙНА</span>
+				<span class="conditions__btn-text-active">змінити дати показу</span>
 			</a>
 		</div>
 	</div>
@@ -700,10 +701,7 @@
 						Тривалість торгів (дні):
 					</div>
 					<div class="values-range__input">
-						<select>
-							<option value="0">20</option>
-							<option value="1">30</option>
-						</select>
+						<input type="number" class="input" value="20" max="30" min="1">
 					</div>
 				</div>
 			</div>
@@ -753,12 +751,12 @@
 	</div>
 
 	<div class="add-services__check">
-		<input type="checkbox" id="label" checked>
+		<input type="checkbox" id="label" class="js-label-check">
 		<label for="label">
 			Я хочу отримати позначку «Перевірено Гарантикою»
 		</label>
 	</div>
-	<div class="download-links add-services__links">
+	<div class="download-links add-services__links js-downloads-links">
 		<div class="download-links__item">
 			<input type="file" id="docfile" accept=".pdf, .png, .jpg">
 			<label class="file-label" for="docfile">
@@ -812,6 +810,111 @@
 		</div>
 		
 	</div>
+	<div class="popup popup-calendar js-popup" id="selectDates">
+	<div class="popup-calendar__inner container">
+		<svg class="icon-cross popup__close js-popup-close">
+			<use xlink:href="#cross"></use>
+		</svg>
+		<form action="dates.json" method="POST" class="dates-select js-dates-select">
+			<div class="dates-select__main">
+				<div class="calendar js-scroll">
+					<div class="btn btn-blue calendar__btn js-dates-open">
+						ОБРАТИ ДНІ ТА ЧАС ОГЛЯДУ МАЙНА
+					</div>
+					
+					<div class="js-calendar">
+						
+					</div>
+				</div>
+			</div>
+			<div class="dates-select__side js-dates-popup">
+				<div class="dates-select__side-section">
+					<div class="dates-select__side-section-title">
+						ОБЕРІТЬ ДНІ 
+					</div>
+					<div class="dates-select__side-calendar js-calendar-small">
+						
+					</div>
+				</div>
+				<div class="dates-select__side-section">
+					<div class="dates-select__side-section-title">
+						ОБЕРІТЬ ЧАС 
+					</div>
+					<div class="dates-select-fields">
+						<div class="dates-select-fields__title">
+							Початок часу огляду:
+						</div>
+						<div class="dates-select-fields__main">
+							<div class="dates-select-fields__main-item">
+								<select class="js-calendar-hours-start">
+									<option value="0" selected>10</option>
+									<option value="1">11</option>
+									<option value="2">12</option>
+									<option value="3">13</option>
+									<option value="4">14</option>
+								</select>
+								<div class="dates-select-fields__main-caption">
+									годин
+								</div>
+							</div>
+							<div class="dates-select-fields__main-item">
+								<select class="js-calendar-minutes-start">
+									<option value="0" selected>00</option>
+									<option value="1">05</option>
+									<option value="2">10</option>
+									<option value="3">15</option>
+									<option value="4">20</option>
+								</select>
+								<div class="dates-select-fields__main-caption">
+									хвилин
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="dates-select-fields">
+						<div class="dates-select-fields__title">
+							Завершення часу огляду:
+						</div>
+						<div class="dates-select-fields__main">
+							<div class="dates-select-fields__main-item">
+								<select class="js-calendar-hours-end">
+									<option value="0" selected>10</option>
+									<option value="1">11</option>
+									<option value="2">12</option>
+									<option value="3">13</option>
+									<option value="4">14</option>
+								</select>
+								<div class="dates-select-fields__main-caption">
+									годин
+								</div>
+							</div>
+							<div class="dates-select-fields__main-item">
+								<select class="js-calendar-minutes-end">
+									<option value="0" selected>00</option>
+									<option value="1">05</option>
+									<option value="2">10</option>
+									<option value="3">15</option>
+									<option value="4">20</option>
+								</select>
+								<div class="dates-select-fields__main-caption">
+									хвилин
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="dates-select__side-actions">
+					<button type="submit" class="btn btn-white">
+						ЗБЕРЕГТИ
+					</button>
+					<button type="button" class="btn btn-transparent js-dates-reset">
+						СКАСУВАТИ
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
 	<div class="popup js-popup" id="loginPopup">
 	<div class="popup-login">
 		<svg class="icon-cross popup-login__close js-popup-close">
@@ -898,6 +1001,10 @@
 </div>
 	<script src="js/plugins.js"></script>
 	
+	
+	
+	<script src="js/trades.js"></script>
+	<script src="js/calendar.js"></script>
 	
 	<script src="js/main.js"></script>
 	
