@@ -40,6 +40,34 @@
 
 	//calendar
 	function calendar() {
+
+		if($('.js-calendar-lg').length) {
+			var initialLocaleCode = 'uk';
+			$('.js-calendar-lg').fullCalendar({
+				header: {
+					left: 'title, prev,next',
+					right:'',
+					center:''
+				},
+				events: 'dates.json',
+				height:550,
+				dayNamesShort:['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', "П'ятниця", 'Субота'],
+				locale: initialLocaleCode,
+				eventRender: function (event, element, view) { 
+			        var dateString = moment(event.start).format('YYYY-MM-DD');
+			        $('.js-calendar-lg').find('.fc-day[data-date="' + dateString + '"]').addClass('active');
+
+			        
+			     },
+			     viewRender: function ( view ){  
+			     	var totalTitle = view.title.split(" "),   
+				    	month = totalTitle[0],
+				    	year = totalTitle[1];
+
+				    $('.js-calendar').find($('.fc-left h2')).html('<span>'+month+'</span><span class="fc-custom-year">'+year+'</span>');
+			     }
+			});
+		}
 		if($('.js-calendar-small').length) {
 
 			var initialLocaleCode = 'uk';
@@ -107,7 +135,7 @@
 			});
 		}
 	} 
-
+	
 	//form submit
 	function formSubmit() {
 		if($('.js-dates-select').length) {
@@ -127,17 +155,21 @@
 
 					events.push(eventItem)
 				
-				$('.js-calendar').fullCalendar('removeEvents');
-				$('.js-calendar').fullCalendar('renderEvents', events);
+				
 
-				// $.ajax({
-		  //           url: 'dates.json',
-		  //           dataType:'JSON',
-		  //           type: "POST",
-		  //           cache: false,
-		  //           data:JSON.stringify(events),
-		  //           contentType: "application/json",
-		  //       });
+				$.ajax({
+		            url: '/dates.json',
+		            dataType:'JSON',
+		            type: "post",
+		            cache: false,
+		            data:JSON.stringify(events),
+		            contentType: "application/json",
+		            success: function(data) {
+		            	console.log(data)
+		            }
+		        });
+		        $('.js-calendar').fullCalendar('removeEvents');
+				$('.js-calendar').fullCalendar('renderEvents', 'dates.json');
 
 
 				
