@@ -810,14 +810,14 @@
 		</div>
 		
 	</div>
-	<div class="popup popup-calendar visible js-popup" id="selectDates">
+	<div class="popup popup-calendar js-popup" id="selectDates">
 	<div class="popup-calendar__inner container">
 		<svg class="icon-cross popup__close js-popup-close">
 			<use xlink:href="#cross"></use>
 		</svg>
 		<form action="dates.json" method="POST" class="dates-select js-dates-select">
 			<div class="dates-select__main">
-				<div class="calendar js-scroll">
+				<div class="calendar">
 					<div class="btn btn-blue calendar__btn js-dates-open">
 						ОБРАТИ ДНІ ТА ЧАС ОГЛЯДУ МАЙНА
 					</div>
@@ -840,68 +840,73 @@
 					<div class="dates-select__side-section-title">
 						ОБЕРІТЬ ЧАС 
 					</div>
-					<div class="dates-select-fields">
-						<div class="dates-select-fields__title">
-							Початок часу огляду:
-						</div>
-						<div class="dates-select-fields__main">
-							<div class="dates-select-fields__main-item">
-								<select class="js-calendar-hours-start">
-									<option value="0" selected>10</option>
-									<option value="1">11</option>
-									<option value="2">12</option>
-									<option value="3">13</option>
-									<option value="4">14</option>
-								</select>
-								<div class="dates-select-fields__main-caption">
-									годин
+					<div class="dates-select-fields-wrapper">
+						<div class="dates-select-fields">
+							<div class="dates-select-fields__title">
+								Початок часу огляду:
+							</div>
+							<div class="dates-select-fields__main">
+								<div class="dates-select-fields__main-item">
+									<select class="js-calendar-hours-start">
+										<option value="0" selected>10</option>
+										<option value="1">11</option>
+										<option value="2">12</option>
+										<option value="3">13</option>
+										<option value="4">14</option>
+									</select>
+									<div class="dates-select-fields__main-caption">
+										годин
+									</div>
+								</div>
+								<div class="dates-select-fields__main-item">
+									<select class="js-calendar-minutes-start">
+										<option value="0" selected>00</option>
+										<option value="1">05</option>
+										<option value="2">10</option>
+										<option value="3">15</option>
+										<option value="4">20</option>
+									</select>
+									<div class="dates-select-fields__main-caption">
+										хвилин
+									</div>
 								</div>
 							</div>
-							<div class="dates-select-fields__main-item">
-								<select class="js-calendar-minutes-start">
-									<option value="0" selected>00</option>
-									<option value="1">05</option>
-									<option value="2">10</option>
-									<option value="3">15</option>
-									<option value="4">20</option>
-								</select>
-								<div class="dates-select-fields__main-caption">
-									хвилин
+						</div>
+						<div class="dates-select-fields">
+							<div class="dates-select-fields__title">
+								Завершення часу огляду:
+							</div>
+							<div class="dates-select-fields__main">
+								<div class="dates-select-fields__main-item">
+									<select class="js-calendar-hours-end">
+										<option value="0" selected>10</option>
+										<option value="1">11</option>
+										<option value="2">12</option>
+										<option value="3">13</option>
+										<option value="4">14</option>
+									</select>
+									<div class="dates-select-fields__main-caption">
+										годин
+									</div>
+								</div>
+								<div class="dates-select-fields__main-item">
+									<select class="js-calendar-minutes-end">
+										<option value="0" selected>00</option>
+										<option value="1">05</option>
+										<option value="2">10</option>
+										<option value="3">15</option>
+										<option value="4">20</option>
+									</select>
+									<div class="dates-select-fields__main-caption">
+										хвилин
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="dates-select-fields">
-						<div class="dates-select-fields__title">
-							Завершення часу огляду:
-						</div>
-						<div class="dates-select-fields__main">
-							<div class="dates-select-fields__main-item">
-								<select class="js-calendar-hours-end">
-									<option value="0" selected>10</option>
-									<option value="1">11</option>
-									<option value="2">12</option>
-									<option value="3">13</option>
-									<option value="4">14</option>
-								</select>
-								<div class="dates-select-fields__main-caption">
-									годин
-								</div>
-							</div>
-							<div class="dates-select-fields__main-item">
-								<select class="js-calendar-minutes-end">
-									<option value="0" selected>00</option>
-									<option value="1">05</option>
-									<option value="2">10</option>
-									<option value="3">15</option>
-									<option value="4">20</option>
-								</select>
-								<div class="dates-select-fields__main-caption">
-									хвилин
-								</div>
-							</div>
-						</div>
-					</div>
+				</div>
+				<div class="btn-send btn btn-transparent js-choose-date">
+					Обрати час
 				</div>
 				<div class="dates-select__side-actions">
 					<button type="submit" class="btn btn-white">

@@ -77,20 +77,7 @@
 				locale: initialLocaleCode,
 
 				dayNamesShort:['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', "П'ятниця", 'Субота'],
-				events: [
-					{
-						title: '11.00 - 19.00',
-						start: '2017-10-01'
-					},
-					{
-						title: '11.00 - 19.00',
-						start: '2017-10-07'
-					},
-					{
-						title: '11.00 - 19.00',
-						start: '2017-10-11'
-					}
-				],
+				events:'dates.json',
 				eventRender: function (event, element, view) { 
 			        var dateString = moment(event.start).format('YYYY-MM-DD');
 			        $('.js-calendar').find('.fc-day[data-date="' + dateString + '"]').addClass('active');
