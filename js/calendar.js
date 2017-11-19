@@ -33,12 +33,12 @@
 					}
 				],
 				height:550,
-				editable: true,
+				editable: false,
 				dayNamesShort:['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', "П'ятниця", 'Субота'],
 				locale: initialLocaleCode,
 				eventRender: function (event, element, view) { 
 			        var dateString = moment(event.start).format('YYYY-MM-DD');
-			        $('.js-calendar-lg').find('.fc-day[data-date="' + dateString + '"]').addClass('active');
+			        $('.js-calendar').find('.fc-day[data-date="' + dateString + '"]').addClass('active');
 			        
 			     },
 			     viewRender: function ( view ){  
@@ -59,7 +59,7 @@
 					center:''
 				},
 				height:240,
-				editable:true,
+				editable:false,
 				locale: initialLocaleCode,
 				selectable: true,
 				dayClick: function (date, jsEvent, view) {
