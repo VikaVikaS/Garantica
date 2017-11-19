@@ -14,7 +14,6 @@
 					minutes: 'хвилин',
 					second: 'секунда',
 					seconds: 'секунд'
-
 				});
 
 			})
@@ -62,42 +61,8 @@
 		}
 	}
 
-	//calendar
-	function calendar() {
-		if($('.js-calendar').length) {
-			var initialLocaleCode = 'uk';
-			$('.js-calendar').fullCalendar({
-				header: {
-					left: 'title, prev,next',
-					right:'',
-					center:''
-				},
-				height:550,
-				showNonCurrentDates:false,
-				locale: initialLocaleCode,
-
-				dayNamesShort:['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', "П'ятниця", 'Субота'],
-				events:'dates.json',
-				eventRender: function (event, element, view) { 
-			        var dateString = moment(event.start).format('YYYY-MM-DD');
-			        $('.js-calendar').find('.fc-day[data-date="' + dateString + '"]').addClass('active');
-
-			        
-			     },
-			     viewRender: function ( view ){  
-			     	var totalTitle = view.title.split(" "),   
-				    	month = totalTitle[0],
-				    	year = totalTitle[1];
-
-				    $('.js-calendar').find($('.fc-left h2')).html('<span>'+month+'</span><span class="fc-custom-year">'+year+'</span>');
-			     }
-			});
-		}
-	} 
-
 
 	$(document).on('ready', function() {
-		calendar();
 		timer();
 		youtubeVieo();
 		initMap();

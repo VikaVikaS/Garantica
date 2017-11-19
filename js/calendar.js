@@ -18,22 +18,27 @@
 
 	//calendar
 	function calendar() {
-		if($('.js-calendar-lg').length) {
+		if($('.js-calendar').length) {
 			var initialLocaleCode = 'uk';
-			$('.js-calendar-lg').fullCalendar({
+			$('.js-calendar').fullCalendar({
 				header: {
 					left: 'title, prev,next',
 					right:'',
 					center:''
 				},
-				events: 'dates.json',
+				eventSources: [
+					{
+						url: 'dates.json',
+						editable: false
+					}
+				],
 				height:550,
+				editable: true,
 				dayNamesShort:['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', "П'ятниця", 'Субота'],
 				locale: initialLocaleCode,
 				eventRender: function (event, element, view) { 
 			        var dateString = moment(event.start).format('YYYY-MM-DD');
 			        $('.js-calendar-lg').find('.fc-day[data-date="' + dateString + '"]').addClass('active');
-
 			        
 			     },
 			     viewRender: function ( view ){  
@@ -82,13 +87,10 @@
 
 							function valueOf(obj, prop) {
 								var val = $(obj + " option").filter(function() {
-								    return this.text == prop
+								    return this.text.trim() == prop.trim()
 								}).val();
 								return val;
 							}	
-
-							// console.log(minutesStart, $('.js-calendar-minutes-start option:selected').text())
-							
 							$('.js-calendar-hours-start').val(''+valueOf(".js-calendar-hours-start", hoursStart)+'');
 							$('.js-calendar-hours-start').selectric('refresh');
 
@@ -100,6 +102,7 @@
 
 							$('.js-calendar-minutes-end').val(''+valueOf(".js-calendar-minutes-end", minutesEnd)+'');
 							$('.js-calendar-minutes-end').selectric('refresh');
+
 						}
 					}
 			        
@@ -157,19 +160,20 @@
 			$('.js-dates-select').submit(function(e) {
 				e.preventDefault();
 				$.ajax({
-		            url: '/dates.json',
+		            url: 'dates.json',
 		            dataType:'JSON',
 		            type: "post",
 		            cache: false,
 		            data:JSON.stringify(events),
 		            contentType: "application/json",
 		            success: function() {
-		            	$('.js-calendar-lg').fullCalendar('removeEvents');
-		            	$('.js-calendar-lg').fullCalendar('renderEvents', 'dates.json');
+		            	$('.js-calendar').fullCalendar('removeEvents');
+		            	$('.js-calendar').fullCalendar('renderEvents', data);
 		            }
 		        });
-		        $('.js-calendar-lg').fullCalendar('removeEvents');
-				$('.js-calendar-lg').fullCalendar('renderEvents', events);
+		        $('.js-calendar .fc-day').removeClass('active');
+		        $('.js-calendar').fullCalendar('removeEvents');
+				$('.js-calendar').fullCalendar('renderEvents', events);
 		        $('.js-dates-popup').removeClass('visible');
 			}) 
 
@@ -182,21 +186,25 @@
 						title:''
 					}
 					var 
-						hoursStart = $('.js-calendar-hours-start option:selected').text(),
-						minutesStart = $('.js-calendar-minutes-start option:selected').text(),
-						hoursEnd = $('.js-calendar-hours-end option:selected').text(),
-						minutesEnd = $('.js-calendar-minutes-end option:selected').text();
-
-						eventItem.start = dates[i];
-						eventItem.title = ''+hoursStart+'.'+minutesStart+' - '+hoursEnd+'.'+minutesEnd+'';
+							hoursStart = $('.selectric-js-calendar-hours-start .label').text(),
+							minutesStart = $('.selectric-js-calendar-minutes-start .label').text(),
+							hoursEnd = $('.selectric-js-calendar-hours-end .label').text(),
+							minutesEnd = $('.selectric-js-calendar-minutes-end .label').text();
 
 					
 					if(curEvents == undefined) {
+						
+
+							eventItem.start = dates[i];
+							eventItem.title = ''+hoursStart+'.'+minutesStart+' - '+hoursEnd+'.'+minutesEnd+'';
+
 						events.push(eventItem)
+
+						
 					} 
 					if(curEvents != undefined && $('.js-calendar-small .fc-day.active').length) { 
 						for(var i = 0; i < events.length; i++) {
-							if($('.fc-day.active').data('date') == events[i].start) {
+							if(events[i].start == $('.fc-day.active').data('date')) {
 								events[i].title = ''+hoursStart+'.'+minutesStart+' - '+hoursEnd+'.'+minutesEnd+'';
 							}
 						}
@@ -249,28 +257,27 @@
 			$('.js-dates-reset').on('click', function() {
 				$('.js-dates-popup').removeClass('visible');
 
-				$('.fc-state-highlight').removeClass("fc-state-highlight");
+				// $('.fc-state-highlight').removeClass("fc-state-highlight");
 
-				$('.js-dates-select').find($('select')).each(function() {
-					$(this).val($(this).find('option:first-child').val());
-					$(this).selectric('refresh');
-				});
+				// $('.js-dates-select').find($('select')).each(function() {
+				// 	$(this).val($(this).find('option:first-child').val());
+				// 	$(this).selectric('refresh');
+				// });
 
-				events = [];
-				dates=[];
+				// events = [];
+				// dates=[];
 
-				$.ajax({
-		            url: '/dates.json',
-		            dataType:'JSON',
-		            type: "post",
-		            cache: false,
-		            data:JSON.stringify(events),
-		            contentType: "application/json"
-		        });
+				// $.ajax({
+		  //           url: '/dates.json',
+		  //           dataType:'JSON',
+		  //           type: "post",
+		  //           cache: false,
+		  //           data:JSON.stringify(events),
+		  //           contentType: "application/json"
+		  //       });
 
-				$('.js-calendar-lg').fullCalendar('removeEvents');
-				$('.js-calendar-lg').find('.fc-day').removeClass('active');
-				$('.js-calendar-small').find('.fc-day').removeClass('last');
+				// $('.js-calendar-lg').fullCalendar('removeEvents');
+				// $('.js-calendar-lg').find('.fc-day').removeClass('active');
 			})
 		}
 	}
