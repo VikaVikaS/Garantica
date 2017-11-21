@@ -176,35 +176,26 @@
 				$('.js-calendar').fullCalendar('renderEvents', events);
 		        $('.js-dates-popup').removeClass('visible');
 			}) 
-
 			$('.js-choose-date').on('click', function() {
 				for(var i = 0; i < dates.length; i++) {
-
 					var curEvents = search(dates[i], events);
 					var eventItem = {
 						start:'',
 						title:''
 					}
 					var 
-							hoursStart = $('.selectric-js-calendar-hours-start .label').text(),
-							minutesStart = $('.selectric-js-calendar-minutes-start .label').text(),
-							hoursEnd = $('.selectric-js-calendar-hours-end .label').text(),
-							minutesEnd = $('.selectric-js-calendar-minutes-end .label').text();
-
-					
+						hoursStart = $('.selectric-js-calendar-hours-start .label').text(),
+						minutesStart = $('.selectric-js-calendar-minutes-start .label').text(),
+						hoursEnd = $('.selectric-js-calendar-hours-end .label').text(),
+						minutesEnd = $('.selectric-js-calendar-minutes-end .label').text();
 					if(curEvents == undefined) {
-						
-
 							eventItem.start = dates[i];
 							eventItem.title = ''+hoursStart+'.'+minutesStart+' - '+hoursEnd+'.'+minutesEnd+'';
-
-						events.push(eventItem)
-
-						
+						events.push(eventItem)	
 					} 
 					if(curEvents != undefined && $('.js-calendar-small .fc-day.active').length) { 
 						for(var i = 0; i < events.length; i++) {
-							if(events[i].start == $('.fc-day.active').data('date')) {
+							if(events[i].start == $('.js-calendar-small  .fc-day.active').data('date')) {
 								events[i].title = ''+hoursStart+'.'+minutesStart+' - '+hoursEnd+'.'+minutesEnd+'';
 							}
 						}
