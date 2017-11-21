@@ -157,26 +157,6 @@
 	//form submit
 	function formSubmit() {
 		if($('.js-dates-select').length) {
-			$('.js-dates-select').submit(function(e) {
-				e.preventDefault();
-				$.ajax({
-		            url: 'dates.json',
-		            dataType:'JSON',
-		            type: "post",
-		            cache: false,
-		            data:JSON.stringify(events),
-		            contentType: "application/json",
-		            success: function() {
-		            	$('.js-calendar').fullCalendar('removeEvents');
-		            	$('.js-calendar').fullCalendar('renderEvents', data);
-		            }
-		        });
-		        $('.js-calendar .fc-day').removeClass('active');
-		        $('.js-calendar').fullCalendar('removeEvents');
-				$('.js-calendar').fullCalendar('renderEvents', events);
-		        $('.js-dates-popup').removeClass('visible');
-			}) 
-
 			$('.js-choose-date').on('click', function() {
 				for(var i = 0; i < dates.length; i++) {
 
@@ -212,6 +192,27 @@
 					}
 				}
 			})
+			$('.js-dates-select').submit(function(e) {
+				e.preventDefault();
+				$.ajax({
+				    url: 'dates.json',
+				    dataType:'JSON',
+				    type: "post",
+				    cache: false,
+				    data:JSON.stringify(events),
+				    contentType: "application/json",
+				    success: function() {
+					$('.js-calendar').fullCalendar('removeEvents');
+					$('.js-calendar').fullCalendar('renderEvents', data);
+				    }
+				});
+				$('.js-calendar .fc-day').removeClass('active');
+				$('.js-calendar').fullCalendar('removeEvents');
+					$('.js-calendar').fullCalendar('renderEvents', events);
+				$('.js-dates-popup').removeClass('visible');
+			}) 
+
+			
 		}
 	}
 
