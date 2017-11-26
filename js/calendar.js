@@ -17,7 +17,7 @@
 	}
 
 	//calendar
-	function calendar() {
+	function mainCalendar() {
 		if($('.js-calendar').length) {
 			var initialLocaleCode = 'uk';
 			$('.js-calendar').fullCalendar({
@@ -26,7 +26,7 @@
 					right:'',
 					center:''
 				},
-				eventSources: [
+				eventsSources: [
 					{
 						url: 'dates.json',
 						editable: false
@@ -50,6 +50,9 @@
 			     }
 			});
 		}
+	}
+	mainCalendar();
+	function calendar() {
 		if($('.js-calendar-small').length) {
 			var initialLocaleCode = 'uk';
 			$('.js-calendar-small').fullCalendar({
@@ -64,16 +67,16 @@
 				selectable: true,
 				dayClick: function (date, jsEvent, view) {
 					if(!$(jsEvent.target).hasClass('fc-state-highlight')) {
-						$('.js-calendar-small  .fc-day').removeClass('active');
+						$('.js-choose-date').removeClass('disabled').text('обрати час');
 
-						$(jsEvent.target).addClass("fc-state-highlight");
+						$(jsEvent.target).addClass("fc-state-highlight current");
 
 						var date = $(jsEvent.target).data('date');
 						dates.push(date)
 					
 					} else {
-						$('.js-calendar-small .fc-day').removeClass('active');
-						$(jsEvent.target).addClass('active');
+						$('.js-choose-date').removeClass('disabled').text('обрати час');
+						$(jsEvent.target).addClass('current');
 						var eventHistory = search($(jsEvent.target).data('date'), events);
 
 						if(eventHistory != undefined) { 
@@ -123,7 +126,7 @@
 
 			   		$('.fc-day').on('dblclick', function() {
 			   			if($(this).hasClass('fc-state-highlight')) {
-			   				$(this).removeClass('fc-state-highlight active');
+			   				$(this).removeClass('fc-state-highlight current');
 
 			   				var curEvents = search($(this).data('date'), events);
 			   				var curDates = function() {
@@ -157,7 +160,29 @@
 	//form submit
 	function formSubmit() {
 		if($('.js-dates-select').length) {
+			$('.js-dates-select').submit(function(e) {
+				e.preventDefault();
+				$.ajax({
+		            url: 'dates.json',
+		            dataType:'JSON',
+		            type: "post",
+		            cache: false,
+		            data:JSON.stringify(events),
+		            contentType: "application/json",
+		            success: function() {
+		            	$('.js-calendar').fullCalendar( 'destroy' );
+		       			mainCalendar();
+		            }
+		        });
+		          
+		        $('.js-calendar .fc-day').removeClass('active');
+		        $('.js-calendar').fullCalendar('removeEvents');
+				$('.js-calendar').fullCalendar('renderEvents', events);
+		        $('.js-dates-popup').removeClass('visible');
+			}) 
 			$('.js-choose-date').on('click', function() {
+				$(this).addClass('disabled').text('час обрано');
+
 				for(var i = 0; i < dates.length; i++) {
 					var curEvents = search(dates[i], events);
 					var eventItem = {
@@ -174,37 +199,18 @@
 							eventItem.title = ''+hoursStart+'.'+minutesStart+' - '+hoursEnd+'.'+minutesEnd+'';
 						events.push(eventItem)	
 					} 
-					if(curEvents != undefined && $('.js-calendar-small .fc-day.active').length) { 
+					if(curEvents != undefined && $('.js-calendar-small .fc-day.current').length) { 
 						for(var i = 0; i < events.length; i++) {
-							if(events[i].start == $('.js-calendar-small  .fc-day.active').data('date')) {
+							if(events[i].start == $('.js-calendar-small  .fc-day.current').data('date')) {
 								events[i].title = ''+hoursStart+'.'+minutesStart+' - '+hoursEnd+'.'+minutesEnd+'';
 							}
 						}
 						
 					}
 				}
-			})
-			$('.js-dates-select').submit(function(e) {
-				e.preventDefault();
-				$.ajax({
-				    url: 'dates.json',
-				    dataType:'JSON',
-				    type: "post",
-				    cache: false,
-				    data:JSON.stringify(events),
-				    contentType: "application/json",
-				    success: function() {
-					$('.js-calendar').fullCalendar('removeEvents');
-					$('.js-calendar').fullCalendar('renderEvents', data);
-				    }
-				});
-				$('.js-calendar .fc-day').removeClass('active');
-				$('.js-calendar').fullCalendar('removeEvents');
-					$('.js-calendar').fullCalendar('renderEvents', events);
-				$('.js-dates-popup').removeClass('visible');
-			}) 
 
-			
+				$('.js-calendar-small .fc-day').removeClass('current');
+			})
 		}
 	}
 
