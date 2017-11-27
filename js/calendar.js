@@ -208,8 +208,9 @@
 						
 					}
 				}
-
-				$('.js-calendar-small .fc-day').removeClass('current');
+				setTimeout(function() {
+					$('.js-calendar-small .fc-day').removeClass('current');
+				}, 200)
 			})
 		}
 	}
