@@ -76,7 +76,7 @@
 					
 					} else {
 						$('.js-choose-date').removeClass('disabled').text('обрати час');
-						$(jsEvent.target).addClass('current');
+						$(jsEvent.target).addClass('active');
 						var eventHistory = search($(jsEvent.target).data('date'), events);
 
 						if(eventHistory != undefined) { 
@@ -112,7 +112,7 @@
 			   },
 			   viewRender: function (view, element) {
 
-			   		$('.fc-day').each(function() {
+			   		$('.fc-day-top').each(function() {
 			   			var self = $(this),
 			 				date = self.data('date');
 
@@ -124,9 +124,10 @@
 
 			   		})
 
-			   		$('.fc-day').on('dblclick', function() {
+			   		$('.fc-day-top').on('dblclick', function() {
+			   			$('.js-choose-date').addClass('disabled').text('час обрано');
 			   			if($(this).hasClass('fc-state-highlight')) {
-			   				$(this).removeClass('fc-state-highlight current');
+			   				$(this).removeClass('fc-state-highlight current active');
 
 			   				var curEvents = search($(this).data('date'), events);
 			   				var curDates = function() {
@@ -151,6 +152,10 @@
 								}
 							}
 			   			}
+			   		})
+
+			   		$('.fc-day-number').on('click', function() {
+			   			return false;
 			   		})
 
         		}
@@ -197,19 +202,18 @@
 					if(curEvents == undefined) {
 							eventItem.start = dates[i];
 							eventItem.title = ''+hoursStart+'.'+minutesStart+' - '+hoursEnd+'.'+minutesEnd+'';
-						events.push(eventItem)	
+						events.push(eventItem)
 					} 
-					if(curEvents != undefined && $('.js-calendar-small .fc-day.current').length) { 
+					if(curEvents != undefined && $('.js-calendar-small .fc-day-top.active').length) { 
 						for(var i = 0; i < events.length; i++) {
-							if(events[i].start == $('.js-calendar-small  .fc-day.current').data('date')) {
+							if(events[i].start == $('.js-calendar-small  .fc-day-top.active').data('date')) {
 								events[i].title = ''+hoursStart+'.'+minutesStart+' - '+hoursEnd+'.'+minutesEnd+'';
 							}
 						}
-						
 					}
 				}
 
-				$('.js-calendar-small .fc-day').removeClass('current');
+				$('.js-calendar-small .fc-day-top').removeClass('current active');
 			})
 		}
 	}
@@ -255,28 +259,6 @@
 		if($('.js-dates-reset').length) {
 			$('.js-dates-reset').on('click', function() {
 				$('.js-dates-popup').removeClass('visible');
-
-				// $('.fc-state-highlight').removeClass("fc-state-highlight");
-
-				// $('.js-dates-select').find($('select')).each(function() {
-				// 	$(this).val($(this).find('option:first-child').val());
-				// 	$(this).selectric('refresh');
-				// });
-
-				// events = [];
-				// dates=[];
-
-				// $.ajax({
-		  //           url: '/dates.json',
-		  //           dataType:'JSON',
-		  //           type: "post",
-		  //           cache: false,
-		  //           data:JSON.stringify(events),
-		  //           contentType: "application/json"
-		  //       });
-
-				// $('.js-calendar-lg').fullCalendar('removeEvents');
-				// $('.js-calendar-lg').find('.fc-day').removeClass('active');
 			})
 		}
 	}
