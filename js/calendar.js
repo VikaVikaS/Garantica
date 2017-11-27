@@ -198,6 +198,8 @@
 							eventItem.start = dates[i];
 							eventItem.title = ''+hoursStart+'.'+minutesStart+' - '+hoursEnd+'.'+minutesEnd+'';
 						events.push(eventItem)	
+						
+						console.log(events)
 					} 
 					if(curEvents != undefined && $('.js-calendar-small .fc-day.current').length) { 
 						for(var i = 0; i < events.length; i++) {
@@ -205,12 +207,14 @@
 								events[i].title = ''+hoursStart+'.'+minutesStart+' - '+hoursEnd+'.'+minutesEnd+'';
 							}
 						}
-						
+						console.log(events)
 					}
 				}
 				setTimeout(function() {
 					$('.js-calendar-small .fc-day').removeClass('current');
 				}, 200)
+				
+				console.log(events)
 			})
 		}
 	}
