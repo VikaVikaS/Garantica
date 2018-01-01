@@ -105,18 +105,25 @@
 
 							$('.js-calendar-minutes-end').val(''+valueOf(".js-calendar-minutes-end", minutesEnd)+'');
 							$('.js-calendar-minutes-end').selectric('refresh');
+
 						}
 					}
+			        
 			   },
 			   viewRender: function (view, element) {
+
 			   		$('.fc-day-top').each(function() {
 			   			var self = $(this),
 			 				date = self.data('date');
+
 			 			var arrayEl = search(date, events);
+
 			 			if(arrayEl) {
 			 				self.addClass('fc-state-highlight');
 			 			}
+
 			   		})
+
 			   		$('.fc-day-top').on('dblclick', function() {
 			   			$('.js-choose-date').addClass('disabled').text('час обрано');
 			   			if($(this).hasClass('fc-state-highlight')) {
@@ -146,14 +153,15 @@
 							}
 			   			}
 			   		})
+
 			   		$('.fc-day-number').on('click', function() {
 			   			return false;
 			   		})
+
         		}
 			});
 		}
 	} 
-	
 	//form submit
 	function formSubmit() {
 		if($('.js-dates-select').length) {
@@ -171,11 +179,15 @@
 		       			mainCalendar();
 		            }
 		        });
+		          
 		        $('.js-calendar .fc-day').removeClass('active');
+		        $('.js-calendar').fullCalendar('removeEvents');
+				$('.js-calendar').fullCalendar('renderEvents', events);
 		        $('.js-dates-popup').removeClass('visible');
 			}) 
 			$('.js-choose-date').on('click', function() {
 				$(this).addClass('disabled').text('час обрано');
+
 				for(var i = 0; i < dates.length; i++) {
 					var curEvents = search(dates[i], events);
 					var eventItem = {
@@ -200,6 +212,7 @@
 						}
 					}
 				}
+
 				$('.js-calendar-small .fc-day-top').removeClass('current active');
 			})
 		}
@@ -208,7 +221,9 @@
 	function selectChange() {
 		if($('.js-calendar-hours-start').length) {
 			$('.js-calendar-hours-start').on('selectric-change', function() {
+
 				var startValue = +$('.js-calendar-hours-start option:selected').text();
+
 				$('.js-calendar-hours-end').find($('option')).each(function() {
 					if(+$(this).text() < startValue) {
 						$(this).prop('disabled', true);
@@ -221,8 +236,10 @@
 				})
 			})
 		}
+
 		if($('.js-calendar-hours-end').length) {
 			$('.js-calendar-hours-end').on('selectric-change', function() {
+
 				var startValue = +$('.js-calendar-hours-end option:selected').text();
 				$('.js-calendar-hours-start').find($('option')).each(function() {
 					if(+$(this).text() > startValue) {
@@ -237,6 +254,7 @@
 			})
 		}
 	}
+
 	function datesReset() {
 		if($('.js-dates-reset').length) {
 			$('.js-dates-reset').on('click', function() {
@@ -244,6 +262,9 @@
 			})
 		}
 	}
+
+ 	
+
 	$(document).on('ready', function() {
 		datesOpen();
 		datesReset();
