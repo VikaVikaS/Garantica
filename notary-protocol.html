@@ -147,7 +147,7 @@
 				<form action="#" class="security-protocol__form">
 					<ul class="security-protocol__list">
 						<li class="security-protocol__list-item">
-							<div class="protocol-info">
+							<div class="protocol-info js-protocol-info">
 								<div class="protocol-info__title">
 									ЗАМОВНИК
 								</div>
@@ -195,11 +195,11 @@
 										</li>
 									</ul>
 								</div>
-								<div class="protocol-info__section">
+								<div class="protocol-info__section js-present-reason" style="display: none;">
 									<div class="protocol-info__section-title">
 										ПРИЧИНА НЕЯВКИ СТОРОНИ
 									</div>
-									<select class="js-present-reason" disabled>
+									<select>
 										<option value="0">Форс-мажорні обставини</option>
 										<option value="1">Форс-мажорні обставини</option>
 										<option value="2">Форс-мажорні обставини</option>
@@ -224,7 +224,7 @@
 											</label>
 										</li>
 										<li class="protocol-info__check-list-item">
-											<input type="radio" name="dc-ready" id="doc-ready-no" checked>
+											<input type="radio" name="dc-ready" id="doc-ready-no">
 											<label for="doc-ready-no" class="protocol-check">
 												<div class="protocol-check__text">
 													Ні
@@ -241,7 +241,7 @@
 							</div>
 						</li>
 						<li class="security-protocol__list-item">
-							<div class="protocol-info">
+							<div class="protocol-info js-protocol-info">
 								<div class="protocol-info__title">
 									ПЕРЕМОЖЕЦЬ
 								</div>
@@ -262,7 +262,7 @@
 									</div>
 									<ul class="protocol-info__check-list">
 										<li class="protocol-info__check-list-item">
-											<input type="radio" name="winner-present" id="winner-present-yes" checked>
+											<input type="radio" name="winner-present" id="winner-present-yes">
 											<label for="winner-present-yes" class="protocol-check">
 												<div class="protocol-check__text">
 													Так
@@ -289,13 +289,23 @@
 										</li>
 									</ul>
 								</div>
+								<div class="protocol-info__section js-present-reason" style="display: none;">
+									<div class="protocol-info__section-title">
+										ПРИЧИНА НЕЯВКИ СТОРОНИ
+									</div>
+									<select>
+										<option value="0">Форс-мажорні обставини</option>
+										<option value="1">Форс-мажорні обставини</option>
+										<option value="2">Форс-мажорні обставини</option>
+									</select>
+								</div>
 								<div class="protocol-info__section">
 									<div class="protocol-info__section-title">
 										ГОТОВНІСТЬ ДОКУМЕНТІВ ДО УГОДИ
 									</div>
 									<ul class="protocol-info__check-list">
 										<li class="protocol-info__check-list-item">
-											<input type="radio" name="winner-dc-ready" id="winner-doc-ready-yes" checked>
+											<input type="radio" name="winner-dc-ready" id="winner-doc-ready-yes">
 											<label for="winner-doc-ready-yes" class="protocol-check">
 												<div class="protocol-check__text">
 													Так
