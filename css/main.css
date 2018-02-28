@@ -2555,7 +2555,7 @@ select {
   background-size: cover;
   border-top: 1px solid #fff; }
   .h-common__content {
-    padding: 15px 0; }
+    padding: 25px 0; }
   .h-common__inner {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2583,7 +2583,7 @@ select {
   .h-features__arrow {
     text-align: center; }
   .h-features__inner {
-    padding-top: 40px; }
+    padding-top: 30px; }
 
 .features-list {
   display: -webkit-flex;
